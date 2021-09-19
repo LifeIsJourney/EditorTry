@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
@@ -106,7 +106,7 @@ public class localizationEditor : EditorWindow
             for (int i = 0; i < userLanguage.Count; i++)
             {
                 GUILayout.BeginHorizontal();
-                GUILayout.Label(userLanguage[i].ToString());
+                GUILayout.Label(userLanguage[i].language.ToString());
                 if(i == userCurrentSelectedLang)
                 {
                     mainText = GUILayout.TextField(mainText, GUILayout.MinWidth(250));
@@ -124,14 +124,16 @@ public class localizationEditor : EditorWindow
                 }
                 GUILayout.EndHorizontal();
             }
-            if(GUILayout.Button("adddd something"))
-            {
-                userLanguage.Add(new SelectedLanguages(SystemLanguage.English));
-                userLanguage.Add(new SelectedLanguages(SystemLanguage.German));
-                userLanguage.Add(new SelectedLanguages(SystemLanguage.Hungarian));
-            }
+          
        }
+     
         GUILayout.EndVertical();
+        if (GUILayout.Button("adddd something"))
+        {
+            userLanguage.Add(new SelectedLanguages(SystemLanguage.English));
+            userLanguage.Add(new SelectedLanguages(SystemLanguage.German));
+            userLanguage.Add(new SelectedLanguages(SystemLanguage.Hungarian));
+        }
     }
 
     string GetLocalizedString(string value, SystemLanguage toConvertInThisLanguage)
