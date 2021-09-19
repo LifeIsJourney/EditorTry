@@ -1,4 +1,4 @@
-# EditorTry
+# EditorTry - UNITY
 Trying new Editor<b>
   
 ----------------------------localizationEditor.cs------------------------------<b>
